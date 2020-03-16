@@ -1,1 +1,1 @@
-web: guniocorn setup:app
+web: gunicorn hello:app --preload
