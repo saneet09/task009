@@ -7,14 +7,14 @@ import numpy as np
 url = 'https://drive.google.com/a/greendeck.co/uc?id=19r_vn0vuvHpE-rJpFHvXHlMvxa8UOeom&export=download'
 app = Flask(__name__)
 CORS(app)
-def init_files(dump_path = 'E:/flask/netaporter_gb.json'):
+def init_files(dump_path = 'dumps/netaporter_gb.json'):
     if dump_path.split('/')[0] not in os.listdir():
         os.mkdir(dump_path.split('/')[0])
     if os.path.exists(dump_path):
         pass
     else:
         gdown.download(url = url, output = dump_path, quiet=False)
-def prepare_dataset(path = 'E:/flask/netaporter_gb.json'):
+def prepare_dataset(path = 'dumps/netaporter_gb.json'):
     '''YOUR DATA PREPARATION CODE HERE'''
     pass        
 @app.route("/")
@@ -24,7 +24,7 @@ def home1():
 @app.route('/task1',methods=['get','post'])
 def task1():
     product_json=[]
-    with open("E:/flask/netaporter_gb.json",encoding="utf8") as fp:
+    with open("dumps/netaporter_gb.json",encoding="utf8") as fp:
         for product in fp.readlines():
             product_json.append(json.loads(product))
     a=52383
@@ -50,7 +50,7 @@ def task1():
 @app.route("/task2",methods=['get','post'])
 def task2():
     product_json=[]
-    with open("E:/flask/netaporter_gb.json",encoding="utf8") as fp:
+    with open("dumps/netaporter_gb.json",encoding="utf8") as fp:
         for product in fp.readlines():
             product_json.append(json.loads(product))
     a=52383
@@ -75,7 +75,7 @@ def task2():
 @app.route("/task3",methods=['get','post'])
 def task3():
     product_json=[]
-    with open("E:/flask/netaporter_gb.json",encoding="utf8") as fp:
+    with open("dumps/netaporter_gb.json",encoding="utf8") as fp:
         for product in fp.readlines():
             product_json.append(json.loads(product))
     a=52383
@@ -143,7 +143,7 @@ def task4():
 @app.route("/task5",methods=['get','post'])
 def task5():
     product_json=[]
-    with open("E:/flask/netaporter_gb.json",encoding="utf8") as fp:
+    with open("dumps/netaporter_gb.json",encoding="utf8") as fp:
         for product in fp.readlines():
             product_json.append(json.loads(product))
     value=0
@@ -157,7 +157,7 @@ def task5():
 @app.route("/task6",methods=['get','post'])
 def task6():
     product_json=[]
-    with open("E:/flask/netaporter_gb.json",encoding="utf8") as fp:
+    with open("dumps/netaporter_gb.json",encoding="utf8") as fp:
         for product in fp.readlines():
             product_json.append(json.loads(product))
     value=0
@@ -172,7 +172,7 @@ def task6():
 @app.route("/task7",methods=['get','post'])
 def task7():
     product_json=[]
-    with open("E:/flask/netaporter_gb.json",encoding="utf8") as fp:
+    with open("dumps/netaporter_gb.json",encoding="utf8") as fp:
         for product in fp.readlines():
             product_json.append(json.loads(product))
     a=52383
@@ -198,8 +198,8 @@ def task7():
 
     
 if __name__ == "__main__":
-    #init_files('dumps/netaporter_gb.json') 
-    #prepare_dataset('dumps/netaporter_gb.json')
+    init_files('dumps/netaporter_gb.json') 
+    prepare_dataset('dumps/netaporter_gb.json')
     #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings.dev")
       app.debug=True
       app.run()
