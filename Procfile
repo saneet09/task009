@@ -1,1 +1,1 @@
-web: guniocorn setup:app
+web: guniocorn wsgi:app
