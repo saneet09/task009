@@ -11,7 +11,7 @@ gdown==3.10.1
 itsdangerous==1.1.0
 Jinja2==2.11.1
 MarkupSafe==1.1.1
-numpy==1.18.1
+numpy==1.22.0
 PySocks==1.7.1
 requests==2.23.0
 six==1.14.0
